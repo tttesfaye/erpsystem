@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_test_student_form" model="ir.ui.view">
+        <field name="name">test.package.form</field>
+        <field name="model">test.student.model</field>
+        <field name="arch" type="xml">
+            <form string="Test Student">
+                <group string="Student Form">
+                    <feild name="first_name"/>
+                    <feild name="last_name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="view_test_package_form" model="ir.ui.view">
+        <field name="name">test.package.form</field>
+        <field name="model">test.package.model</field>
+        <field name="arch" type="xml">
+            <form string="Package">
+                <group string="My First Form View">
+                    <feild name="name"/>
+                    <feild name="location"/>
+                    <feild name="startDate"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_test_package" model="ir.actions.act_window">
+        <field name="name">Packages</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">test.package.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <record id="action_test_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">test.student.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="cust_root" name="My package" sequence="10"></menuitem>
+    <menuitem id="cust" name="package" parent="cust_root" action="action_test_package"></menuitem>
+    <menuitem id="stud" name="Student" parent="cust_root" action="action_test_student"></menuitem>
+
+
+</odoo>
