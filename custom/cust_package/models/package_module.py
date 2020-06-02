@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class TestPackageModel(models.Model):
@@ -11,8 +12,9 @@ class TestPackageModel(models.Model):
 
 
 class Student(models.Model):
-    _name = 'test.student.model'
+    _name = "test.student.model"
     _description = "this is a student"
 
     first_name = fields.Char()
     middle_name = fields.Char()
+    last_name = fields.Char()

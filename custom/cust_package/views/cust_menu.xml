@@ -7,10 +7,23 @@
         <field name="arch" type="xml">
             <form string="Test Student">
                 <group string="Student Form">
-                    <feild name="first_name"/>
-                    <feild name="last_name"/>
+                    <field name="first_name"/>
+                    <field name="middle_name"/>
+                    <field name="last_name"/>
                 </group>
             </form>
+        </field>
+    </record>
+    <record id="view_student_tree" model="ir.ui.view">
+        <field name="name">test.student.tree</field>
+        <field name="model">test.student.model</field>
+
+        <field name="arch" type="xml">
+            <tree string="Stages of Notes">
+                <field name="first_name"/>
+                <field name="middle_name"/>
+                <field name="last_name"/>
+            </tree>
         </field>
     </record>
     <record id="view_test_package_form" model="ir.ui.view">
@@ -19,9 +32,9 @@
         <field name="arch" type="xml">
             <form string="Package">
                 <group string="My First Form View">
-                    <feild name="name"/>
-                    <feild name="location"/>
-                    <feild name="startDate"/>
+                    <field name="name"/>
+                    <field name="location"/>
+                    <field name="startDate"/>
                 </group>
             </form>
         </field>
@@ -34,10 +47,11 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-     <record id="action_test_student" model="ir.actions.act_window">
+    <record id="action_test_student" model="ir.actions.act_window">
         <field name="name">Students</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">test.student.model</field>
+        <field name="search_view_id" ref="view_student_tree"/>
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="cust_root" name="My package" sequence="10"></menuitem>
