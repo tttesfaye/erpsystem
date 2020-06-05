@@ -6,11 +6,13 @@
         <field name="model">test.student.model</field>
         <field name="arch" type="xml">
             <form string="Test Student">
+                <note string="basic">
                 <group string="Student Form">
                     <field name="first_name"/>
                     <field name="middle_name"/>
                     <field name="last_name"/>
                 </group>
+                </note>
             </form>
         </field>
     </record>
